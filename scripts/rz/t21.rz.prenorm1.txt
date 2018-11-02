@@ -1,3 +1,0 @@
-
-(block 
-  (<0>&test-void</0>))

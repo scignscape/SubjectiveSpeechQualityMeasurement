@@ -1,3 +1,0 @@
-
-(block 
-  (<<&test-prss>> <<ok1>> <<ok2>>))
