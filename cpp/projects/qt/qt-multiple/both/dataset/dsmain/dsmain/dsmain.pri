@@ -59,14 +59,3 @@ SOURCES += \
 
 message(choice: $$CPP_ROOT_DIR/targets/$$CHOICE_CODE/$$PROJECT_SET--$$PROJECT_GROUP--$$PROJECT_NAME)
 mkpath($$CPP_ROOT_DIR/targets/$$CHOICE_CODE/$$PROJECT_SET--$$PROJECT_GROUP--$$PROJECT_NAME)
-
-
-
-#LIBS += -L$$TARGETSDIR -lkcm-lisp-bridge  \
-#  -lkauvir-code-model -lkauvir-type-system
-
-#LIBS += -L$$TARGETSDIR -lkcm-command-package -lkcm-command-runtime \
-#   -lkcm-direct-eval -lfn-doc
-
-
-

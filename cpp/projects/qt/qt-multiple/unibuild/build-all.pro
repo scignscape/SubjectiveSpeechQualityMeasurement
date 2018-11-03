@@ -1,4 +1,10 @@
 
+#           Copyright Nathaniel Christen 2018.
+#  Distributed under the Boost Software License, Version 1.0.
+#     (See accompanying file LICENSE_1_0.txt or copy at
+#           http://www.boost.org/LICENSE_1_0.txt)
+
+
 TEMPLATE = subdirs
 
 
@@ -14,44 +20,44 @@ SUBDIRS += \
   kauvir/kauvir-kcm/kauvir-code-model \
   kauvir/kauvir-runtime/kcm-command-package \
   phaon/phaon/PhaonLib \
-  
-    # this is only for r/z ...
-SUBDIRS += \  
+
+    # this is only for R/Z ...
+SUBDIRS += \
   rz/rz-dynamo/rz-dynamo-generator \
   kauvir/kauvir-kcm/kcm-lisp-bridge \
 
-SUBDIRS += \   
+SUBDIRS += \
   kauvir/kauvir-runtime/kcm-command-runtime \
 
-SUBDIRS += \ 
+SUBDIRS += \
   kauvir/kauvir-phaon/kph-generator \
 
-SUBDIRS += \ 
+SUBDIRS += \
   kauvir/kcm-runtime-eval/kcm-direct-eval \
   kauvir/kauvir-phaon/kauvir-phaon \
 
-SUBDIRS += \ 
+SUBDIRS += \
   qscign/ScignStage/ScignStage-audio \
 
-SUBDIRS += \ 
+SUBDIRS += \
   phaon/phaon/phaon-console \
   kauvir/kauvir-phaon/kauvir-phaon-console \
   kauvir/kauvir-phaon/kph-tcp-console \
 
-SUBDIRS += \ 
+SUBDIRS += \
   dataset/dsmain/_run__dsmain-console \
 
-SUBDIRS += \ 
+SUBDIRS += \
   phaon/phaon-xml/phaon-xml \
   phaon/phaon-xml/phaon-xml-console \
 
-SUBDIRS += \ 
+SUBDIRS += \
   kauvir/kauvir-phaon/kph-generator-console \
 
-SUBDIRS += \ 
+SUBDIRS += \
   kauvir/kcm-runtime-eval/kcm-env \
 
-SUBDIRS += \ 
+SUBDIRS += \
   rz/rz-kauvir/rz-graph-core \
   rz/rz-kauvir/rz-graph-token \
   rz/rz-kauvir/rz-graph-build \
@@ -68,7 +74,7 @@ SUBDIRS += \
   external/lisp/sexpr \
   rz/rz-kauvir/rz-graph-lisp-console \
 
-SUBDIRS += \ 
+SUBDIRS += \
   rz/rz-dynamo/rz-dynamo-console \
   rz/rz-dynamo/rz-graph-dynamo-console \
   kauvir/kcm-runtime-eval/fn-doc \
