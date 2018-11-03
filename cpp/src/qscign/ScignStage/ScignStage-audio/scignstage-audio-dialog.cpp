@@ -87,19 +87,6 @@ USING_KANS(Phaon)
 
 //USING_QSNS(ScignStage)
 
-// // kai
-void ScignStage_Audio_Dialog::test_msgbox(QString msg)
-{
- QString m = QString("Received Message: %1").arg(msg);
- QMessageBox::information(this, "Test OK", m);
-}
-
-void ScignStage_Audio_Dialog::play_sample(int index)
-{
- current_index_ = index;
- play_file_at_current_index();
-}
-
 
 ScignStage_Audio_Dialog::ScignStage_Audio_Dialog(XPDF_Bridge* xpdf_bridge,
   Test_Series* ts1, Test_Series* ts2,
@@ -127,6 +114,10 @@ ScignStage_Audio_Dialog::ScignStage_Audio_Dialog(XPDF_Bridge* xpdf_bridge,
  button_cancel_->setDefault(true);
 
  button_ok_->setEnabled(false);
+
+ // // unless this is being embedded ...
+ button_proceed_->setEnabled(false);
+ button_cancel_->setText("Close");
 
  button_box_->addButton(button_ok_, QDialogButtonBox::AcceptRole);
  button_box_->addButton(button_proceed_, QDialogButtonBox::ApplyRole);
@@ -349,6 +340,19 @@ void ScignStage_Audio_Dialog::check_phr()
 #endif
 }
 
+// // KAI
+void ScignStage_Audio_Dialog::test_msgbox(QString msg)
+{
+ QString m = QString("Received Message: %1").arg(msg);
+ QMessageBox::information(this, "Test OK", m);
+}
+
+void ScignStage_Audio_Dialog::play_sample(int index)
+{
+ current_index_ = index;
+ play_file_at_current_index();
+}
+
 void ScignStage_Audio_Dialog::play_next_sample()
 {
  handle_sample_down();
@@ -402,17 +406,6 @@ void ScignStage_Audio_Dialog::highlight_peers(int index)
   QLabel* lbl = sample_to_label_map_[tsa].first;
   lbl->setStyleSheet("QLabel{background:pink;}");
  }
-
-}
-
-void ScignStage_Audio_Dialog::test_data_to_text(QString result,
-  int test, int column)
-{
-
-}
-
-void ScignStage_Audio_Dialog::check_qnam()
-{
 
 }
 
@@ -796,10 +789,6 @@ void ScignStage_Audio_Dialog::check_launch_xpdf(std::function<void()> fn,
  }
 }
 
-void ScignStage_Audio_Dialog::handle_open_file_requested(QString path)
-{
-
-}
 
 void ScignStage_Audio_Dialog::activate_tcp_requested()
 {
@@ -880,7 +869,7 @@ void ScignStage_Audio_Dialog::activate_tcp_requested()
 #else
  QMessageBox::information(this, "Kauvir/Phaon Needed",
    QString(
-     "To use TCP for testing/demoing \"Kernal Application Interface\" "
+     "To use TCP for testing/demoing \"Kernel Application Interface\" "
      "functions you need to build several additional libraries "
      "(see the build-order.txt file for Qt project files and %1, line %2).")
      .arg(__FILE__).arg(__LINE__)
@@ -972,6 +961,11 @@ void ScignStage_Audio_Dialog::handle_peer_up()
 
 void ScignStage_Audio_Dialog::handle_peer_down()
 {
+ if(!last_sample_)
+ {
+  handle_sample_first();
+  return;
+ }
  QVector<Test_Sample*>* peers = last_sample_->get_peer_samples();
  int i = last_sample_->index_in_peer_set() + 1;
  Test_Sample* samp = peers->value(i, peers->value(0));
@@ -994,15 +988,7 @@ void ScignStage_Audio_Dialog::handle_sample_up()
 
 ScignStage_Audio_Dialog::~ScignStage_Audio_Dialog()
 {
- // //  and so one ...
- delete button_ok_;
- delete button_proceed_;
- delete button_cancel_;
-}
-
-void ScignStage_Audio_Dialog::check_tile_geometric_navigate(int r, int c)
-{
- QString tile_file = QString("r%1c%2").arg(r).arg(c);
+ //  //  Child widgets should delete automatically ...
 }
 
 void ScignStage_Audio_Dialog::handle_sample_replay()

@@ -56,7 +56,6 @@ class QMediaPlayer;
 class QProcess;
 class QTcpServer;
 
-class ScignStage_Image_Tile;
 class ScignStage_Clickable_Label;
 
 class XPDF_Bridge;
@@ -64,7 +63,6 @@ class XPDF_Bridge;
 KANS_CLASS_DECLARE(PhaonLib ,Phaon_Runner)
 USING_KANS(PhaonLib)
 
-//
 QSNS_(ScignStage)
 _QSNS(ScignStage)
 //?namespace QScign { namespace ScignStage {
@@ -103,13 +101,7 @@ class ScignStage_Audio_Dialog : public QDialog
  QFrame* main_frame_;
  QGridLayout* main_grid_layout_;
 
-
- // //
- QVBoxLayout* annotation_layout_;
-
  NAV_Audio1D_Panel* nav_panel_;
-
- void check_tile_geometric_navigate(int r, int c);
 
  XPDF_Bridge* xpdf_bridge_;
 
@@ -155,8 +147,6 @@ class ScignStage_Audio_Dialog : public QDialog
  std::function<void()> screenshot_function_;
 
  bool xpdf_is_ready();
-
- void check_qnam();
  void check_phr();
 
  void run_msg(QString msg, QByteArray qba);
@@ -213,8 +203,6 @@ public:
  void show_distractor_text(int index);
  void highlight_sample(int index);
  void highlight_peers(int index);
- void test_data_to_text(QString result, int test, int column);
-
 
 Q_SIGNALS:
  void canceled(QDialog*);
@@ -230,7 +218,6 @@ public Q_SLOTS:
  void cancel();
 
  void activate_tcp_requested();
- void handle_open_file_requested(QString);
 
  void handle_sample_up();
  void handle_sample_down();

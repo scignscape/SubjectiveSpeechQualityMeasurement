@@ -59,9 +59,6 @@ class NAV_Audio1D_Panel : public QFrame
  QVBoxLayout* main_layout_;
  QHBoxLayout* navigation_layout_;
 
-
- QVBoxLayout* sort_series_layout_;
-
  ScignStage_Image_Tile* current_sample_;
 
  QPushButton* sample_up_button_;
@@ -151,7 +148,7 @@ public Q_SLOTS:
 //_QSNS(ScignStage)
 
 
-#endif  // NAV_GEOMETRIC_2D_PANEL__H
+#endif  // NAV_AUDIO_1D_PANEL__H
 
 
 
