@@ -53,7 +53,7 @@ https://common-lisp.net/project/ecl/ and https://github.com/juanjosegarciaripoll
 You may need to edit the "`find-ecl-sexpr.pri`" file to point to 
 the correct folder(s) where ECL includes and libs are located.
 
-Note that this data set includes code from the Sexpresso project, used here to clean up generated Lisp files: please see https://github.com/BitPuffin/sexpresso.  (This project is only slightly used here and it is hard to find much information about it; generic searches for "`Sexpresso`" tend to find, um, other kinds of content.)
+Note that this data set also includes code from the Sexpresso project, used here to clean up generated Lisp files: the code is copied here for convnience, but please see https://github.com/BitPuffin/sexpresso for the original.  (This project is only slightly used here and it is hard to find much information about it; generic searches for "`Sexpresso`" tend to find, um, other kinds of content.)
 
 ---
 **R/Z**
