@@ -1,5 +1,6 @@
 
-# Subjective Speech Quality Measurement: data set and code base
+# Subjective Speech Quality Measurement
+## Data Set and Code Base 
 
 This data set derives from _Subjective speech quality measurement with and without parallel task: Laboratory test results comparison_ by Hakob Avetisyan and Jan Holub (see https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0199787).  It is used to dmonstrate features of a new "Dataset Creator" (dsC).
 
@@ -35,23 +36,24 @@ Users may want to edit the "`./cpp/src/external/xpdf/xpdf/aconf/aconf.h`" file. 
 ---
 **TROUBLESHOOTING**
 
-1.  Except with "`build-quick.pro`", the build process will generate multiple executable files, some for testing or related documentation.  Most of the times users will want the executable called "`__run_dsmain-console`" which should run automatically.  However, any executable may be chosen by right-clicking on the project as listed on Qt Creator's Project Panel (usually on the left of the IDE) or by selecting that desired "Run Configuration" from the "Run Settings" section of the "Projects" tab (at the far-left of the IDE).  If the application does not seem to run properly, it may be because the wrong executable selection is chosen for the default Run Configuration, so the "`__run_dsmain-console`" option should be chosen from the drop-down list in "Run Settings".
+1.  Except with "`build-quick.pro`", the build process will generate multiple executable files, some for testing or related documentation.  Most of the times users will want the executable called "`dsmain-console`" (the project named "`__run_dsmain-console`") which should run automatically.  However, any executable may be chosen by right-clicking on the project as listed on Qt Creator's Project Panel (usually on the left of the IDE) or by selecting that desired "Run Configuration" from the "Run Settings" section of the "Projects" tab (at the far-left of the IDE).  If the application does not seem to run properly, it may be because the wrong executable selection is chosen for the default Run Configuration, so the "`__run_dsmain-console`" option should be chosen from the drop-down list in "Run Settings".
 
 2.  The dsC project organization uses Qt naming conventions to automatically configure an environment so typical users can easily build and launch the main ("`dsmain-console`") application and other executables.  This process will fail if a working Qt environment (called a Qt "`kit`") is not available _before_ the "`build-quick.pro`" or other project files are opened in the IDE.  It is recommended to double-check that you have a valid kit ("`Options`" -- "`Build & Run`" -- "`Kits`") and start a new, blank session (via the menubar "`File`" -- "`Sessions`" submenu) before starting to use this data set.
 
 3.  Because of a quirk, Qt Creator will on some systems misidentify project files with unusually long paths, causing an endless loop during the build (because "`qmake`" will run repeatedly).  This is most likely a problem for users choosing the more complex "`build-all`" or "`isobuild`" strategies.  If you use these options, keep an eye on the "Compiler Output" window on Qt Creator and make sure "`qmake`" is not running multiple times on one file (this attention ceases to be necessary once the Compiler Output suggests that all of the "`qmake`" files are processed and the compiler has started to generate object files).  If you do encounter a loop, you may either rename the problemmatic "`.pro`" files -- this repo chooses to give projects relatively long, descriptive names -- or choose shorter names like "`SSQM/ar`" for the repo folder and its parent.  Alternatively, employ the "`isobuild`" approach where you can manually decide when to run "`qmake`".
 
-4.  For "`build-all`", or "`isobuild`" using the more advanced Runtime Reflection features, be sure that Embeddable Common Lisp is installed on your computer in locations that match the paths described in "`find-ecl-sexpr.pri`" (see below).  If the needed ECL components are not found, the project may fail to build and/or run. 
+4.  For "`build-all`", or "`isobuild`" using the more advanced Runtime Reflection features, be sure that Embeddable Common Lisp is installed on your computer in locations that match the paths described in "`find-ecl-sexpr.pri`" (see below).  If the needed ECL components are not found, the project may fail to build and/or run.  You may need to copy "`ecl.dll`" or "`ecl.so`" to the folder where the "`dsmain-console`" executable is deployed (something like "`./cpp/targets/qt/qt-multiple/targets-5-10-1-UNIBUILD-all`").
 
 ---
 **ECL**
 
-This code may optionally use ECL (Embeddable Common Lisp) and a C++ ECL wrapper called 
-cl-cxx.  Both of these are easy to find and build: check 
+This code may optionally use ECL (Embeddable Common Lisp) and a C++ ECL wrapper called cl-cxx.  Both of these are easy to find and build: check 
 https://common-lisp.net/project/ecl/ and https://github.com/juanjosegarciaripoll/cl-cxx.
 
 You may need to edit the "`find-ecl-sexpr.pri`" file to point to 
 the correct folder(s) where ECL includes and libs are located.
+
+Note that this data set includes code from the Sexpresso project, used here to clean up generated Lisp files: please see https://github.com/BitPuffin/sexpresso.  (This project is only slightly used here and it is hard to find much information about it; generic searches for "`Sexpresso`" tend to find, um, other kinds of content.)
 
 ---
 **R/Z**
