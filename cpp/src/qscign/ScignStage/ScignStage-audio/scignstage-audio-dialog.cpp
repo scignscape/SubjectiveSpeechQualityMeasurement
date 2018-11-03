@@ -513,7 +513,7 @@ void ScignStage_Audio_Dialog::run_smos_message(const QPoint& p, int col)
   bool proceed = ask_pdf_proceed("smos");
   if(proceed)
   {
-   open_pdf_file(ABOUT_FILE_FOLDER "/main.pdf", 2);
+   open_pdf_file(ABOUT_FILE_FOLDER "/main.pdf", 3);
   }
  },[this, col]
  {
@@ -536,7 +536,7 @@ void ScignStage_Audio_Dialog::run_nmos_message(const QPoint& p, int col)
   bool proceed = ask_pdf_proceed("nmos");
   if(proceed)
   {
-   open_pdf_file(ABOUT_FILE_FOLDER "/main.pdf", 2);
+   open_pdf_file(ABOUT_FILE_FOLDER "/main.pdf", 3);
   }
  },[this, col]
  {
@@ -559,7 +559,7 @@ void ScignStage_Audio_Dialog::run_gmos_message(const QPoint& p, int col)
   bool proceed = ask_pdf_proceed("gmos");
   if(proceed)
   {
-   open_pdf_file(ABOUT_FILE_FOLDER "/main.pdf", 2);
+   open_pdf_file(ABOUT_FILE_FOLDER "/main.pdf", 3);
   }
  },[this, col]
  {
