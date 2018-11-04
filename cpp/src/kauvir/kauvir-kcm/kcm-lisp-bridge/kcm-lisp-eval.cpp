@@ -12,12 +12,12 @@
 
 #include "kcm-lisp-runtime-argument.h"
 
-#include "kcm-runtime-eval/kcm-scopes/kcm-scope-system.h"
+#include "kcm-scopes/kcm-scope-system.h"
 
 #include "rz-dynamo-generator/rz-dynamo-generator.h"
 
 #include "kauvir-code-model/kcm-channel-bridge.h"
-#include "kauvir-runtime/kcm-command-runtime/kcm-command-runtime-router.h"
+#include "kcm-command-runtime/kcm-command-runtime-router.h"
 
 
 

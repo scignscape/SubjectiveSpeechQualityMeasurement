@@ -6,9 +6,9 @@
 
 #include "fn-doc.h"
 
-#include "kcm-runtime-eval/kcm-scopes/kcm-scope-system.h"
+#include "kcm-scopes/kcm-scope-system.h"
 
-#include "kcm-runtime-eval/kcm-env/kcm-env.h"
+#include "kcm-env/kcm-env.h"
 
 #include "kauvir-code-model/kcm-type-object.h"
 #include "kauvir-type-system/kauvir-type-object.h"

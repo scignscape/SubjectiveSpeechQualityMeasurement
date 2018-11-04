@@ -13,7 +13,7 @@
 #include "kauvir-code-model/kcm-expression.h"
 #include "kauvir-code-model/kcm-file.h"
 
-#include "kauvir-runtime/kcm-command-package/kcm-command-package.h"
+#include "kcm-command-package/kcm-command-package.h"
 
 Q_DECLARE_METATYPE(KCM_Command_Package*)
 

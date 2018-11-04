@@ -27,7 +27,7 @@
 #include "PhaonLib/phaon-channel-group-table.h"
 #include "PhaonLib/phaon-runner.h"
 
-#include "kcm-runtime-eval/kcm-direct-eval/kcm-direct-eval.h"
+#include "kcm-direct-eval/kcm-direct-eval.h"
 
 
 #include "kans.h"

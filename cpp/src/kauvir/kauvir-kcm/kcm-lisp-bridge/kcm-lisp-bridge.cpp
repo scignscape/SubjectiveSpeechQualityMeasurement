@@ -17,8 +17,8 @@
 
 #include "kcm-lisp-runtime-argument.h"
 
-#include "kcm-runtime-eval/kcm-scopes/kcm-runtime-scope.h"
-#include "kcm-runtime-eval/kcm-scopes/kcm-scope-system.h"
+#include "kcm-scopes/kcm-runtime-scope.h"
+#include "kcm-scopes/kcm-scope-system.h"
 
 #include "kauvir-code-model/kcm-source-function.h"
 
