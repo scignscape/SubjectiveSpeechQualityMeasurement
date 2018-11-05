@@ -12,7 +12,7 @@
 
 #include "kauvir-code-model/kauvir-code-model.h"
 #include "kauvir-code-model/kcm-channel-group.h"
-#include "kcm-runtime-eval/kcm-scopes/kcm-scope-system.h"
+#include "kcm-scopes/kcm-scope-system.h"
 
 
 #include "PhaonLib/phaon-namespace.h"
