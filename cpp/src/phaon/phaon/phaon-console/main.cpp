@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
  phr.get_phaon_scope_queue().push_front(&pss);
 
  KPH_Command_Package khp;
- khp.parse_from_file( DEFAULT_KPF_FOLDER "/test/raw/t1.kph" );
+ khp.parse_from_file( DEFAULT_KPH_FOLDER "/test/raw/t1.kph" );
 
  KCM_Channel_Group kcg(kcm.channel_names());
 

@@ -42,7 +42,7 @@ USING_KANS(PhaonLib)
 void init_qba(QByteArray& qba)
 {
  KPH_Command_Package kcp;
- kcp.parse_from_file( DEFAULT_KPF_FOLDER "/dataset/raw/t1.kph" );
+ kcp.parse_from_file( DEFAULT_KPH_FOLDER "/dataset/raw/t1.kph" );
 
 
  kcp.supply_data(qba);
