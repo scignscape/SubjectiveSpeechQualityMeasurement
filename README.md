@@ -24,7 +24,7 @@ Linux users are advised to download and link against a version of Qt different f
 
 For Windows users, installing Qt is a good way to ensure that you have a C++ development environment, with components like MinGW and g++.  It is recommended to use these tools -- which are based on cross-platform environments -- as opposed to using Microsoft-specific products like the VC++ compiler.
 
-The code in this data set is designed to build and run within Qt Creator.  You do not need a separate build tool like cmake.  Upon loading your preferred project file (e.g., "`build-quick.pro`" or "`build-most.pro`"), you can automatically compile and run the code -- and start exploring the data set -- with Qt Creator's "`Run`" option.  You can use "`build-quick.pro`" to test that your compiler is working properly and quickly browse the data set and then load "`build-most.pro`".  (Note that if you choose "`build-all.pro`" the compile time is noticably longer -- that's usually not a sign of any problem but see "`TROUBLESHOOTING`".) 
+The code in this data set is designed to build and run within Qt Creator.  You do not need a separate build tool like cmake.  Upon loading your preferred project file (e.g., "`build-quick.pro`" or "`build-most.pro`"), you can automatically compile and run the code -- and start exploring the data set -- with Qt Creator's "`Run`" option.  You can use "`build-quick.pro`" to test that your compiler is working properly and quickly browse the data set and then load "`build-most.pro`".  (Note that if you choose "`build-all.pro`" the compile time is noticeably longer -- that's usually not a sign of any problem but see "`TROUBLESHOOTING`".) 
 
 ---
 **XPDF**
@@ -53,7 +53,7 @@ https://common-lisp.net/project/ecl/ and https://github.com/juanjosegarciaripoll
 You may need to edit the "`find-ecl-sexpr.pri`" file to point to 
 the correct folder(s) where ECL includes and libs are located.
 
-Note that this data set also includes code from the Sexpresso project, used here to clean up generated Lisp files: the code is copied here for convnience, but please see https://github.com/BitPuffin/sexpresso for the original.  (This project is only slightly used here and it is hard to find much information about it; generic searches for "`Sexpresso`" tend to find, um, other kinds of content.)
+Note that this data set also includes code from the Sexpresso project, used here to clean up generated Lisp files: the code is copied here for convenience, but please see https://github.com/BitPuffin/sexpresso for the original.  (The Sexpresso project is minimally used here and it is hard to find much information about it; generic searches for "`Sexpresso`" tend to find, um, other kinds of content.)
 
 ---
 **R/Z**
