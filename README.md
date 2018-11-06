@@ -62,7 +62,7 @@ The R/Z project can be used for more advanced Runtime Reflection for datasets.  
 
 The simplest use-case for R/Z is to build Intermediate Representation files to pass to the main ("`dsmain-console`") application.  In this case the application does not need to embed an R/Z scripting environment in the application itself, just a simpler capability to process Intermediate Representation in the "Kauvir" format.  A more advanced use-case is to script main applications directly, which is outside the scope of this data set.
 
-See "`./scripts/rz-kph/t1.rz`" for an example of a script to generate a "Kauvir" file that is not immediately exeuted but can be saved to pass to "`dsmain-console`" via the "`kauvir-phaon-tcp-console`" executable. 
+See "`./scripts/rz-kph/t1.rz`" for an example of a script to generate a "Kauvir" file that is not immediately executed but can be saved to pass to "`dsmain-console`" via the "`kauvir-phaon-tcp-console`" executable. 
 
 To check the R/Z environment overall, test the R/Z compiler with "`rz-graph-dynamo-runtime-console`" or one of the other "rz-dynamo" executables.  The "`t1.rz`" file can have sample code like: 
 ```
