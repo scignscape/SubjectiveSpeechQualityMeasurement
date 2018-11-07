@@ -18,10 +18,13 @@
 
 #include "fn-doc.h"
 
+#include "textio.h"
 
 #include <QTextStream>
-
 #include <QDebug>
+
+USING_KANS(TextIO)
+
 
 Fn_Doc_Multi::Fn_Doc_Multi()
   :  fnd_(nullptr)
@@ -60,23 +63,28 @@ void Fn_Doc_Multi::read(QString fn)
 void Fn_Doc_Multi::kph_gen_multi(QString path)
 {
  QString text;
- for(QPair<QString, const KCM_Type_Object*> pr : fns_)
+ QListIterator<QPair<QString, const KCM_Type_Object*>> it(fns_);
+ while(it.hasNext())
  {
+  const QPair<QString, const KCM_Type_Object*>& pr = it.next();
+  QString txt;
   QString fn = pr.first;
   const KCM_Type_Object* kto = pr.second;
-  fnd_->kph_gen(fn, QString());
+  fnd_->kph_gen(kto, txt);
+  if(it.hasNext())
+  {
+   if(txt.endsWith('-'))
+   {
+    txt.chop(1);
+    txt += "##\n.\n";
+   }
+  }
+  text += txt;
  }
+ if(path.startsWith('@'))
+ {
+  path = path.mid(1);
+  path.prepend(AR_ROOT_DIR);
+ }
+ save_file(path, text);
 }
-
-//void Fn_Doc_Multi::kph_gen(QString fn, QString subs)
-//{
-// qDebug() << "fn: " << fn;
-// const KCM_Type_Object* kto = scopes_->get_type_object_from_symbol_name(fn);
-// if(kto)
-// {
-//  if(kenv_)
-//  {
-//   kenv_->kph_gen(kto->channel_group(), subs, fn);
-//  }
-// }
-//}

@@ -8,6 +8,13 @@ kenv \= (envv _$);
 fnm -> init kenv;
 
 ,play_sample ::: .[ScignStage_Audio_Dialog*] .(int)  $-> extern;
+,show_sentence_text ::: .[ScignStage_Audio_Dialog*] .(int)  $-> extern;
+
+
+fnm -> read "play_sample";
+fnm -> read "show_sentence_text";
+
+,play_sample ::: .[ScignStage_Audio_Dialog*] .(int)  $-> extern;
 
 fnm -> kph-gen-multi  "@/cpp/kph/gen-multi/t1.txt";
 
