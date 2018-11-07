@@ -33,6 +33,7 @@
 #include "basic-functions/rz-dynamo-basic-functions.h"
 
 #include "fn-doc/fn-doc.h"
+#include "fn-doc/fn-doc-multi.h"
 #include "kcm-env/kcm-env.h"
 
 #include "kcm-lisp-bridge/kcm-lisp-bridge.h"
@@ -139,10 +140,11 @@ void prepare_runtime()
  qRegisterMetaType<KCM_Lisp_Bridge>();
  qRegisterMetaType<KCM_Lisp_Bridge*>();
 
-
  qRegisterMetaType<Fn_Doc>();
  qRegisterMetaType<Fn_Doc*>();
 
+ qRegisterMetaType<Fn_Doc_Multi>();
+ qRegisterMetaType<Fn_Doc_Multi*>();
 
 }
 
@@ -177,14 +179,24 @@ void run_dynamo(KCM_Lisp_Eval& kle, QString script_file, KCM_Env* kenv)
 
   qDebug() << qs;
  });
- 
+
  kenv->set_kph_gen_fn([](Kauvir_Code_Model* kcm, KCM_Channel_Group* kcg,
-   QString subsstr, QString fn)
+   QString subsstr, QString fn, QString* text)
  {
   KPH_Generator_Substitutions subs(subsstr);
-  KPH_Generator gen (DEFAULT_KPH_FOLDER "/gen/rz-kph/t1.txt", &subs);
-  gen.encode(*kcg, fn);
-  gen.save_kph_file();
+
+  if(text)
+  {
+   KPH_Generator gen;
+   gen.encode(*kcg, fn);
+   *text = gen.text();
+  }
+  else
+  {
+   KPH_Generator gen (DEFAULT_KPH_FOLDER "/gen/rz-kph/t1.txt", &subs);
+   gen.encode(*kcg, fn);
+   gen.save_kph_file();
+  }
  });
 
  init_basic_functions_kci(kcm);
@@ -221,9 +233,11 @@ int main(int argc, char* argv[])
  kcm.set_make_kcm_command_package_from_channel_group_fn(&make_kcm_command_package_from_channel_group);
  kcm.set_make_kcm_command_package_fn(&make_kcm_command_package);
 
-
  kcm.create_and_register_type_object("Fn_Doc");
  kcm.create_and_register_type_object("Fn_Doc*");
+
+ kcm.create_and_register_type_object("Fn_Doc_Multi");
+ kcm.create_and_register_type_object("Fn_Doc_Multi*");
 
  KCM_Env* kenv = new KCM_Env(nullptr);
  QString kenv_typename = "KCM_Env*";
