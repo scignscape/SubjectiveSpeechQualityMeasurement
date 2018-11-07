@@ -5,7 +5,9 @@ TEMPLATE = subdirs
 SUBDIRS = \
   dataset/dsmain/dsmain \
   dataset/dsmain/data-model-console \
-
+  dataset/ro-info/ro-info \
+  dataset/ro-info/ro-info-console \
+  
 SUBDIRS += \ 
   external/xpdf/xpdf \
   external/xpdf/xpdf-console \
