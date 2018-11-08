@@ -89,7 +89,7 @@ USING_KANS(Phaon)
 
 
 ScignStage_Audio_Dialog::ScignStage_Audio_Dialog(XPDF_Bridge* xpdf_bridge,
-  Test_Series* ts1, Test_Series* ts2,
+  Test_Series* ts,
   QWidget* parent)
   : QDialog(parent), xpdf_bridge_(xpdf_bridge), player_(nullptr), last_sample_(nullptr),
     last_highlight_(nullptr), xpdf_process_(nullptr), tcp_server_(nullptr),
@@ -173,11 +173,11 @@ ScignStage_Audio_Dialog::ScignStage_Audio_Dialog(XPDF_Bridge* xpdf_bridge,
 
  int r = 0;
 
- files_.resize(ts1->samples().size());
+ files_.resize(ts->samples().size());
 
  max_index_ = files_.size() - 1;
 
- samples_ = &ts1->samples();
+ samples_ = &ts->samples();
 
  QStringList theaders {
   "Test 1",
@@ -208,7 +208,7 @@ ScignStage_Audio_Dialog::ScignStage_Audio_Dialog(XPDF_Bridge* xpdf_bridge,
 
 
 
- for(Test_Sample* sa : ts1->samples())
+ for(Test_Sample* sa : ts->samples())
  {
   QString f = sa->audio_sample()->file_name();
 
