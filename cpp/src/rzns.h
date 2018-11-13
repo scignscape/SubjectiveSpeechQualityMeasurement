@@ -30,10 +30,14 @@
 #ifndef INNER_NS_
 #define INNER_NS_(X) \
  namespace X{
+#endif
+
 
 #ifndef _INNER_NS
 #define _INNER_NS(X) \
  }
+#endif
+
 
 #define USING_RZNS(x) \
  using namespace RZ::x;
