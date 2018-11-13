@@ -7,9 +7,8 @@
 #ifndef KANS__H
 #define KANS__H
 
+#ifndef USE_KANS
 #define USE_KANS
-
-#ifdef USE_KANS
 
 #define KANS_(X) \
  namespace KA { namespace X {
