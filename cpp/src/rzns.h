@@ -7,7 +7,13 @@
 #ifndef RZNS__H
 #define RZNS__H
 
-#define USE_RZNS
+// // this is defined by default;
+ //   for most cases it should stay so...
+ //   Should be defined via compiler flag by qmake.
+ //   If that is edited from the projeect files
+ //   uncomment this as needed ...
+ //   #define USE_RZNS
+
 
 #ifdef USE_RZNS
 
@@ -21,11 +27,12 @@
 #define RZNS_CLASS_DECLARE(X ,C) \
  namespace RZ { namespace X { class C; } }
 
-
+#ifndef INNER_NS_
 #define INNER_NS_(X) \
  namespace X{
 
-#define END_INNER_NS(X) \
+#ifndef _INNER_NS
+#define _INNER_NS(X) \
  }
 
 #define USING_RZNS(x) \
