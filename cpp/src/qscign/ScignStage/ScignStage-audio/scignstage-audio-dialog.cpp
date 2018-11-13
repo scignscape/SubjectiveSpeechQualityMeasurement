@@ -667,17 +667,17 @@ void ScignStage_Audio_Dialog::run_message_by_grid_position(const QPoint& p, int 
 {
  static QMap<QPair<int, int>, void(ScignStage_Audio_Dialog::*)(const QPoint&, int col)>
    static_map {{
-   {{0, 1}, &run_test_no_load_message},
-   {{0, 4}, &run_test_with_load_message},
+   {{0, 1}, &ScignStage_Audio_Dialog::run_test_no_load_message},
+   {{0, 4}, &ScignStage_Audio_Dialog::run_test_with_load_message},
 
-   {{1, 1}, &run_smos_message},
-   {{1, 4}, &run_smos_message},
+   {{1, 1}, &ScignStage_Audio_Dialog::run_smos_message},
+   {{1, 4}, &ScignStage_Audio_Dialog::run_smos_message},
 
-   {{1, 2}, &run_nmos_message},
-   {{1, 5}, &run_nmos_message},
+   {{1, 2}, &ScignStage_Audio_Dialog::run_nmos_message},
+   {{1, 5}, &ScignStage_Audio_Dialog::run_nmos_message},
 
-   {{1, 3}, &run_gmos_message},
-   {{1, 6}, &run_gmos_message},
+   {{1, 3}, &ScignStage_Audio_Dialog::run_gmos_message},
+   {{1, 6}, &ScignStage_Audio_Dialog::run_gmos_message},
   }};
 
  auto it = static_map.find({r, c});
