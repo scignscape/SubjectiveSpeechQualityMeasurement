@@ -41,7 +41,7 @@ public:
    pt = nullptr;
  }
 
- static cocon(T r) { return Range_Dbl(r); }
+ static double cocon(T r) { return Range_Dbl(r); }
 
  operator T() { return raw_; }
  void operator=(T r) { raw_ = r; }
