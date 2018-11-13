@@ -55,6 +55,9 @@
 
 #define USING_RZNS(x) \
 
+#define RZNS_CLASS_DECLARE(X ,C) \
+  class C;
+
 #endif
 
 

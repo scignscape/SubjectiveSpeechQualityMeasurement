@@ -49,6 +49,9 @@
 
 #define USING_QSNS(x) \
 
+#define QSNS_CLASS_DECLARE(X ,C) \
+  class C;
+
 #endif
 
 

@@ -56,6 +56,9 @@
 
 #define USING_KANS(x) \
 
+#define KANS_CLASS_DECLARE(X ,C) \
+  class C;
+
 #endif
 
 
