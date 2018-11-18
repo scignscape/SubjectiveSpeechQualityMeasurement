@@ -93,8 +93,6 @@ class ScignStage_Audio_Dialog : public QDialog
 
  QPushButton* take_screenshot_button_;
 
- QPushButton* scignstage_button_;
-
 
  QScrollArea* grid_scroll_area_;
  QFrame* main_frame_;
