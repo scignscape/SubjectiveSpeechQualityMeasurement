@@ -13,6 +13,7 @@ include(../build-group.pri)
 
 DEFINES += AR_ROOT_DIR=\\\"$$ROOT_DIR\\\"
 
+DEFINES += USE_KANS
 
 INCLUDEPATH += $$KAUVIR_KCM_SRC_GROUP_DIR \
   $$KAUVIR_KCM_SRC_GROUP_DIR/kauvir-type-system \
