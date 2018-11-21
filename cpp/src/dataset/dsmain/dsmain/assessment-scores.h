@@ -11,10 +11,11 @@
 #include "kans.h"
 #include "accessors.h"
 
-#include <QtGlobal>
-
 #include "range-int.h"
 #include "precon.h"
+
+
+#include <QtGlobal>
 
 KANS_(DSM)
 
