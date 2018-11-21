@@ -64,7 +64,8 @@ exists($$CPP_ROOT_DIR/targets/$$CHOICE_CODE/kauvir--kauvir-kcm--kcm-lisp-bridge)
 {
  message(DEFINE\'ing USING_ECL)
  include(../../../../find-ecl-sexp.pri)
- LIBS += -L$$ECL_DIR
+ LIBS += -L$$ECL_DIR -lecl
+ LIBS += -L$$CL_CXX_DIR/install/lib64 -lcl_cxx
  message($$ECL_DIR)
 }
 
