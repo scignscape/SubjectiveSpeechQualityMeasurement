@@ -157,7 +157,7 @@ void init_test_functions(void* origin, Kauvir_Code_Model& kcm,
     );
 
   g1.add_lambda_carrier(
-    {kcm.get_kcm_type_by_kauvir_type_object( &type_system->type_object__str() ), nullptr},
+    {kcm.get_kcm_type_by_kauvir_type_object( &type_system->type_object__int() ), nullptr},
      QString()
     );
 

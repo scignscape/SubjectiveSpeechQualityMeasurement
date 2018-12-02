@@ -94,7 +94,7 @@ ScignStage_Audio_Dialog::ScignStage_Audio_Dialog(XPDF_Bridge* xpdf_bridge,
   : QDialog(parent), xpdf_bridge_(xpdf_bridge), player_(nullptr), last_sample_(nullptr),
     last_highlight_(nullptr), xpdf_process_(nullptr), tcp_server_(nullptr),
     phr_(nullptr), phr_init_function_(nullptr), screenshot_function_(nullptr),
- current_tcp_msecs_(0),
+    current_tcp_msecs_(0),
     xpdf_port_(0), current_index_(-1), max_index_(0), current_volume_(50)
 {
  // // setup RZW
